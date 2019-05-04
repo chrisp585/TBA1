@@ -15,7 +15,7 @@ def display():
     line3 = "this will be last place you ever see."
 
     #For statement create the typing effect for the game intro
-    for x in line1:
+    """for x in line1:
         print(x, end='')
         sys.stdout.flush()
         sleep(0.1)
@@ -28,7 +28,7 @@ def display():
     for x in line3:
         print(x, end='')
         sys.stdout.flush()
-        sleep(0.1)
+        sleep(0.1)"""
 
     sleep(2)
     system('cls') #for windows
