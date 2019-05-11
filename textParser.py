@@ -54,7 +54,7 @@ def userInput():
     understandFlag = 0
     while(understandFlag != 1):
     #take in text
-        userInput = raw_input("What would you like to do next?\n")
+        userInput = input("What would you like to do next?\n")
         sys.stdout.flush()
     #split text by " "(space)
         words = userInput.split()
@@ -83,7 +83,7 @@ def userInput():
                             alias = findAlias(x)
                             print ("FOUND ALIAS:", alias)
                             #look for nouns following key words
-                            nouns = ['bed', 'desk', 'table', 'chair', 'staircase', 'lamp', 'ect']
+                            nouns = ['bed', 'desk', 'table', 'chair', 'staircase', 'lamp', 'ect', 'key']
                             understandFlag = 2 
                             for i in nouns:
                                 try:

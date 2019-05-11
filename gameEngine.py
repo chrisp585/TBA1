@@ -26,7 +26,7 @@ def main():
     print (newGame.printRoomDescription())
 
     print (newGame.objectList)
-    print (newGame.)
+    print (newGame.passageList)
 
     while (newGame.gameOver() == 0):
         textParser.userInput()

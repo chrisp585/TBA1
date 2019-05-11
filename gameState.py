@@ -31,7 +31,7 @@ class gameState:
         self.objectList.append(objectDict)
         print ("Object added to the list")#for testing
 
-    def addPassage(self, passages):
+    def addPassage(self, passageDict):
         self.passageList.append(passageDict)
         print("Passage added to list")#for testing
 
@@ -69,9 +69,9 @@ class gameState:
         print ("Room added to the list")#for testing
 
     def gameOver(self):
-        for item in self.objectListList:
-            if (item['Name'] == Key):
-                if (item['Location'] == 'Cell Block' & currentRoom == 'Cell Block'):
+        for item in self.objectList:
+            if (item['Name'] == 'Key'):
+                if (item['Location'] == 'Cell Block' and self.currentRoom == 'Cell Block'):
                     print("Demo Over")
                     return 1
         return 0
