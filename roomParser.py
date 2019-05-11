@@ -17,12 +17,22 @@ poster, toilet, sink, Bible, air vent.', \
 
     newGame.createRoom(roomDict)
 
+    roomDict = {'Name': 'Cell Block', \
+        'LongDesc': 'Now you are in the cell block, there are a lot of people \n\
+roaming about.  You should explore.  But this is just a sample so you can\'t \n\
+actually do anything but go back to your prison cell', \
+        'ShortDesc': 'Again this is the short description telling you, go back', \
+        'Status': 'not visited'}
+
+    newGame.createRoom(roomDict)
+
     # Object will be anything that but can be inspected that's not a passage
-    objectDict = {'Name': 'Sample Item', 'Description': 'Sample Description', 'Movable': 'y'}
+    objectDict = {'Name': 'Key', 'Description': 'Key opens cell door', 'Location': 'Prison Cell', 'Movable': 'y'}
 
     newGame.addObject(objectDict)
 
     # Passages will be passage way, door, hole, window, etc.
-    passageDict = {'Name': 'PassageName', 'Description': 'Sample Pass Description', 'Locked': 'y', 'KeytoOpen': 'door key'}
+    passageDict = {'Name': 'Prison cell door', 'Description': 'Just the door to the prison cell', \
+        'Locked': 'y', 'KeytoOpen': 'Key'}
     
     newGame.addPassage(passageDict)

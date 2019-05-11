@@ -32,10 +32,15 @@ class gameState:
         print ("Object added to the list")#for testing
 
     def addPassage(self, passages):
-        print("Need to discuss this one")
+        self.passageList.append(passageDict)
+        print("Passage added to list")#for testing
 
-    def addInventory(self, item):
-        print ("Code needed")#replace with code
+    def addInventory(self, itemName):
+        self.playerInventory.append(itemName)
+        for item in self.objectList:
+            if (item['Name'] == itemName):
+                if (item['Location'] == 'Inventory'):
+                    print ("Item added to inventory")#for testing
 
     def removeInventory(self, item):
         print ("Code needed")#replace with code
@@ -62,3 +67,11 @@ class gameState:
     def createRoom(self, roomDict):
         self.roomList.append(roomDict)
         print ("Room added to the list")#for testing
+
+    def gameOver(self):
+        for item in self.objectListList:
+            if (item['Name'] == Key):
+                if (item['Location'] == 'Cell Block' & currentRoom == 'Cell Block'):
+                    print("Demo Over")
+                    return 1
+        return 0

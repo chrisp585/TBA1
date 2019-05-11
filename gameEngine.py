@@ -2,6 +2,7 @@ from time import sleep
 import mainMenu
 import gameState
 import roomParser
+import textParser
 import sys
 from os import system, name
 
@@ -23,7 +24,12 @@ def main():
 
     #gameplay loop would start here
     print (newGame.printRoomDescription())
-    print (newGame.getRoomStatus())
+
+    print (newGame.objectList)
+    print (newGame.)
+
+    while (newGame.gameOver() == 0):
+        textParser.userInput()
 
 
 
