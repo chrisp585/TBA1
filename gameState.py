@@ -12,7 +12,7 @@ class gameState:
         self.objectList = []
         self.roomStatus = []
         self.passageList = []
-        print ("GameState Instance Created")#for testing
+        #print ("GameState Instance Created")#for testing
 
     def modifyState(self, verb, noun):
         if (verb == 'take'):
@@ -32,14 +32,14 @@ class gameState:
                     self.removeInventory(noun)
                     return
 
-        print ("State modified")
+        #print ("State modified")
 
     def setRoomStatus(self, roomName):
         for item in self.roomList:
             if (item['Name'] == roomName):
                 if (item['Status'] == 'not visited'):
                     item['Status'] = 'visited'
-                    print ("Room status changed to", item['Status'])#for testing
+                    #print ("Room status changed to", item['Status'])#for testing
 
     # Not sure this function is needed
     def getRoomStatus(self):
@@ -49,18 +49,18 @@ class gameState:
 
     def addObject(self, objectDict):
         self.objectList.append(objectDict)
-        print ("Object added to the list")#for testing
+        #print ("Object added to the list")#for testing
 
     def addPassage(self, passageDict):
         self.passageList.append(passageDict)
-        print("Passage added to list")#for testing
+        #print("Passage added to list")#for testing
 
     def addInventory(self, itemName):
         self.playerInventory.append(itemName)
         for item in self.objectList:
             if (item['Name'] == itemName):
                 item['Location'] = 'Inventory'
-                print ("Item added to inventory")#for testing
+                #print ("Item added to inventory")#for testing
 
     def removeInventory(self, itemName):
         for item in self.playerInventory:
@@ -69,7 +69,7 @@ class gameState:
                 for item in self.objectList:
                     if (item['Name'] == itemName):
                         item['Location'] = self.currentRoom
-                        print ("Item added to inventory")#for testing
+                        #print ("Item added to inventory")#for testing
 
     def printRoomDescription(self):
         for item in self.roomList:
@@ -77,10 +77,10 @@ class gameState:
             if (item['Name'] == self.currentRoom):
                 if (item['Status'] == 'visited'):
                     print ("Location: ", item['Name'])
-                    print (item['ShortDesc'])
+                    print (item['ShortDesc'], '\n')
                 else:
                     print ("Location: ", item['Name'])
-                    print (item['LongDesc'])
+                    print (item['LongDesc'], '\n')
                     self.setRoomStatus(self.currentRoom)
                 break
 
@@ -92,7 +92,7 @@ class gameState:
 
     def createRoom(self, roomDict):
         self.roomList.append(roomDict)
-        print ("Room added to the list")#for testing
+        #print ("Room added to the list")#for testing
 
     def printDescription(self, objectName):
         for item in self.objectList:

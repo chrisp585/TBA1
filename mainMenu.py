@@ -72,5 +72,6 @@ def display():
     print("3) Exit\n")
 
     menuSelection = input("> ")
+    print ('\n')
 
     return (menuSelection)

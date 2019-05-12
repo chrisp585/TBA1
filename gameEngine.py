@@ -23,10 +23,10 @@ def main():
         print ("Goodbye")
 
     #gameplay loop would start here
-    print (newGame.printRoomDescription())
+    newGame.printRoomDescription()
 
-    print (newGame.objectList)
-    print (newGame.passageList)
+    #print (newGame.objectList)
+    #print (newGame.passageList)
 
     while (newGame.gameOver() == 0):
         verb, noun = textParser.userInput()

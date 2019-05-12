@@ -56,8 +56,10 @@ def userInput():
     understandFlag = 0
     while(understandFlag != 1):
     #take in text
-        userInput = input("What would you like to do next?\n")
+        print ("What would you like to do next?")
+        userInput = input("> ")
         sys.stdout.flush()
+        print ('\n')
     #split text by " "(space)
         words = userInput.split()
         #taking out "the" or "a", we don't need it
@@ -81,16 +83,16 @@ def userInput():
                     'push', 'press', 'shove', 'drink', 'sip', 'gulp', 'slurp', 'suck', 'open', 'expand', 'free', 'take', 'grab']
                     for y in keywords:
                         if x == y:
-                            print ("FOUND VERB:", x)
+                            #print ("FOUND VERB:", x)
                             alias = findAlias(x)
-                            print ("FOUND ALIAS:", alias)
+                            #print ("FOUND ALIAS:", alias)
                             #look for nouns following key words
                             nouns = ['bed', 'desk', 'table', 'chair', 'staircase', 'lamp', 'ect', 'Key', 'Door1', 'Door2']
                             understandFlag = 2 
                             for i in nouns:
                                 try:
                                     if words[idx+1] == i:
-                                        print ("FOUND NOUN:", i)
+                                        #print ("FOUND NOUN:", i)
                                         userNoun = i
                                         #confirm understand, we have action and noun that we know so we can exit
                                         understandFlag = 1
