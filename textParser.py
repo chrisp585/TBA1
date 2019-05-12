@@ -1,5 +1,7 @@
 #include statements
 import sys
+import gameState
+import gameEngine
 
 
 #returns the alias for the verb entered by the player
@@ -83,7 +85,7 @@ def userInput():
                             alias = findAlias(x)
                             print ("FOUND ALIAS:", alias)
                             #look for nouns following key words
-                            nouns = ['bed', 'desk', 'table', 'chair', 'staircase', 'lamp', 'ect', 'key']
+                            nouns = ['bed', 'desk', 'table', 'chair', 'staircase', 'lamp', 'ect', 'Key', 'Door1', 'Door2']
                             understandFlag = 2 
                             for i in nouns:
                                 try:
@@ -102,11 +104,11 @@ def userInput():
             #if we don't understand the verb
             if understandFlag == 0:
                 print ("I\'m sorry, I don\'t understand. Please enter a different phrase.\n")
-
+    
     return alias, userNoun
 
 
-if __name__ == '__main__':
+'''if __name__ == '__main__':
     SV = "startingValue"
     actionNoun = userInput()
     finalActions = ['hit', 'pull', 'eat', 'scratch', 'drop', 'break', 'throw', 'push', 'drink', 'open', 'take', 'look', 'lookat']
@@ -115,7 +117,7 @@ if __name__ == '__main__':
             #set flag
             flag = idx 
             print ("\nFlag:", flag)
-            print ("User Noun:", actionNoun[1])
+            print ("User Noun:", actionNoun[1])'''
             
             #this is how it would go back to the main program, with the correct flag and item
             # return flag, actionNoun[1]

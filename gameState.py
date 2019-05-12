@@ -14,6 +14,26 @@ class gameState:
         self.passageList = []
         print ("GameState Instance Created")#for testing
 
+    def modifyState(self, verb, noun):
+        if (verb == 'take'):
+            for item in self.objectList:
+                if (item['Name'] == noun and item['Movable'] == 'y'):
+                    self.addInventory(noun)
+                    return
+        elif (verb == 'open'):
+            for item in self.passageList:
+                if (item['Name'] == noun):
+                    self.currentRoom = item['Connection']
+                    self.printRoomDescription()
+                    return
+        elif (verb == 'drop'):
+            for item in self.objectList:
+                if (item['Name'] == noun and item['Location'] == 'Inventory'):
+                    self.removeInventory(noun)
+                    return
+
+        print ("State modified")
+
     def setRoomStatus(self, roomName):
         for item in self.roomList:
             if (item['Name'] == roomName):
@@ -39,11 +59,17 @@ class gameState:
         self.playerInventory.append(itemName)
         for item in self.objectList:
             if (item['Name'] == itemName):
-                if (item['Location'] == 'Inventory'):
-                    print ("Item added to inventory")#for testing
+                item['Location'] = 'Inventory'
+                print ("Item added to inventory")#for testing
 
-    def removeInventory(self, item):
-        print ("Code needed")#replace with code
+    def removeInventory(self, itemName):
+        for item in self.playerInventory:
+            if (item == itemName):
+                self.playerInventory.remove(item)
+                for item in self.objectList:
+                    if (item['Name'] == itemName):
+                        item['Location'] = self.currentRoom
+                        print ("Item added to inventory")#for testing
 
     def printRoomDescription(self):
         for item in self.roomList:
@@ -56,7 +82,7 @@ class gameState:
                     print ("Location: ", item['Name'])
                     print (item['LongDesc'])
                     self.setRoomStatus(self.currentRoom)
-            break
+                break
 
     def loadSavedGame(self):
         print ("Load game function: code needed")#replace with code
@@ -67,6 +93,12 @@ class gameState:
     def createRoom(self, roomDict):
         self.roomList.append(roomDict)
         print ("Room added to the list")#for testing
+
+    def printDescription(self, objectName):
+        for item in self.objectList:
+            if (item['Name'] == objectNameName):
+                if (item['Location'] == self.currentRoom):
+                    print ("Room status changed to", item['Status'])#for testing
 
     def gameOver(self):
         for item in self.objectList:

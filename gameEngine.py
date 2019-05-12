@@ -29,7 +29,8 @@ def main():
     print (newGame.passageList)
 
     while (newGame.gameOver() == 0):
-        textParser.userInput()
+        verb, noun = textParser.userInput()
+        newGame.modifyState(verb, noun)
 
 
 
