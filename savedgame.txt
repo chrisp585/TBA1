@@ -1,11 +1,11 @@
 Prison Cell
 *
-Prison Cell|visited
-Cell Block|not visited
+visited
+not visited
 *
-key|Inventory
+Inventory
 *
-Door1|y
-Door2|y
+y
+y
 *
 key

@@ -36,8 +36,8 @@ class gameState:
             self.saveGame()
             return
         elif (verb == 'loadgame'):
-            self.saveGame()
-            self.printDescription()
+            self.loadSavedGame()
+            self.printRoomDescription()
             return
 
         #print ("State modified")
@@ -86,14 +86,60 @@ class gameState:
                 if (item['Status'] == 'visited'):
                     print ("Location: ", item['Name'])
                     print (item['ShortDesc'], '\n')
+                    print ("Inventory: ")
+                    self.displayInventory()
                 else:
                     print ("Location: ", item['Name'])
                     print (item['LongDesc'], '\n')
                     self.setRoomStatus(self.currentRoom)
+                    print ("Inventory: ")
+                    self.displayInventory()
                 break
 
     def loadSavedGame(self):
-        print ("Load game function: code needed")#replace with code
+
+        self.playerInventory = []
+        dataSet = 0
+        tempRoom = []
+        tempObject = []
+        tempPassage = []
+
+        fo = open('savedgame.txt', 'r')
+        
+        line = fo.readlines()
+
+        fo.close()
+
+        for item in line:
+
+            tempStr = item.rstrip()
+
+            if (tempStr == '*'):
+                dataSet += 1
+                continue
+     
+            if (dataSet == 0):
+                self.currentRoom = tempStr
+            elif (dataSet == 1):
+                tempRoom.append(tempStr)
+            elif (dataSet == 2):
+                tempObject.append(tempStr)
+            elif (dataSet == 3):
+                tempPassage.append(tempStr)
+            elif (dataSet == 4):
+                self.addInventory(tempStr)
+
+        for index in range(len(tempRoom)):
+            temp = self.roomList[index]
+            temp['Status'] = tempRoom[index]
+
+        for index in range(len(tempObject)):
+            temp = self.objectList[index]
+            temp['Location'] = tempObject[index]
+
+        for index in range(len(tempPassage)):
+            temp = self.passageList[index]
+            temp['Locked'] = tempPassage[index]                   
 
     def saveGame(self):
         fo = open("savedgame.txt", "w+")
@@ -101,15 +147,15 @@ class gameState:
         fo.write(self.currentRoom + '\n*\n')
 
         for item in self.roomList:
-            fo.write(item['Name'] + '|' + item['Status'] + '\n')
+            fo.write(item['Status'] + '\n')
         fo.write('*\n')
 
         for item in self.objectList:
-            fo.write(item['Name'] + '|' + item['Location'] + '\n')
+            fo.write(item['Location'] + '\n')
         fo.write('*\n')
 
         for item in self.passageList:
-            fo.write(item['Name'] + '|' + item['Locked'] + '\n')
+            fo.write(item['Locked'] + '\n')
         fo.write('*\n')
 
         for item in self.playerInventory:
@@ -126,6 +172,9 @@ class gameState:
             if (item['Name'] == objectNameName):
                 if (item['Location'] == self.currentRoom):
                     print ("Room status changed to", item['Status'])#for testing
+
+    def displayInventory(self):
+        print (self.playerInventory)
 
     def gameOver(self):
         for item in self.objectList:

@@ -31,6 +31,7 @@ def main():
     while (newGame.gameOver() == 0):
         verb, noun = textParser.userInput()
         newGame.modifyState(verb, noun)
+        #newGame.displayInventory() #for testing
 
 
 
