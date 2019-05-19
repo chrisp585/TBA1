@@ -10,10 +10,10 @@ def display():
     #Sets the console window size
     os.system("mode con cols=170 lines=50")
     
-    #system('cls') #for windows
-    system('clear') #for linux
+    system('cls') #for windows
+    #system('clear') #for linux
 
-    line1 = "After escaping from two previous prison, you are now being transported to Alcatraz Federal Penitentiary.\n"
+    '''line1 = "After escaping from two previous prison, you are now being transported to Alcatraz Federal Penitentiary.\n"
     line2 = "No one in history has every excaped from Alcatraz island. Unless you can figure out how to the first, then\n"
     line3 = "this will be last place you ever see."
 
@@ -34,8 +34,8 @@ def display():
         sleep(0.1)
 
     sleep(2)
-    #system('cls') #for windows
-    system('clear') #for linux
+    system('cls') #for windows'''
+    #system('clear') #for linux
 
 
 

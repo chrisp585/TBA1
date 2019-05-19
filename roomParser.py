@@ -27,13 +27,13 @@ actually do anything but go back to your prison cell', \
     newGame.createRoom(roomDict)
 
     # Object will be anything that but can be inspected that's not a passage
-    objectDict = {'Name': 'Key', 'Description': 'Key opens cell door', 'ShortDesc': 'Short key desc','Location': 'Prison Cell', 'Movable': 'y', 'HiddenItem': 'Key'}
+    objectDict = {'Name': 'key', 'Description': 'Key opens cell door', 'ShortDesc': 'Short key desc','Location': 'Prison Cell', 'Movable': 'y', 'HiddenItem': 'Key'}
 
     newGame.addObject(objectDict)
 
     # Passages will be passage way, door, hole, window, etc.
     passageDict = {'Name': 'Door1', 'Description': 'Just the door to the Cell Block', \
-        'Connection': 'Cell Block', 'Locked': 'y', 'KeytoOpen': 'Key'}
+        'Connection': 'Cell Block', 'Locked': 'y', 'KeytoOpen': 'key'}
 
     newGame.addPassage(passageDict)
 

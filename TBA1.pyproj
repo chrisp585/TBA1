@@ -26,6 +26,9 @@
     <Compile Include="gameState.py" />
     <Compile Include="mainMenu.py" />
     <Compile Include="roomParser.py" />
+    <Compile Include="roomParserX.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="textParser.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

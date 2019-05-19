@@ -1,5 +1,6 @@
 import roomParser
 from roomParser import parseNewRoomData
+import os
 
 class gameState:
     """This class maintains current state of the game"""
@@ -31,6 +32,13 @@ class gameState:
                 if (item['Name'] == noun and item['Location'] == 'Inventory'):
                     self.removeInventory(noun)
                     return
+        elif (verb == 'savegame'):
+            self.saveGame()
+            return
+        elif (verb == 'loadgame'):
+            self.saveGame()
+            self.printDescription()
+            return
 
         #print ("State modified")
 
@@ -88,7 +96,26 @@ class gameState:
         print ("Load game function: code needed")#replace with code
 
     def saveGame(self):
-        print ("Code needed")#replace with code
+        fo = open("savedgame.txt", "w+")
+
+        fo.write(self.currentRoom + '\n*\n')
+
+        for item in self.roomList:
+            fo.write(item['Name'] + '|' + item['Status'] + '\n')
+        fo.write('*\n')
+
+        for item in self.objectList:
+            fo.write(item['Name'] + '|' + item['Location'] + '\n')
+        fo.write('*\n')
+
+        for item in self.passageList:
+            fo.write(item['Name'] + '|' + item['Locked'] + '\n')
+        fo.write('*\n')
+
+        for item in self.playerInventory:
+            fo.write(item)
+
+        fo.close()
 
     def createRoom(self, roomDict):
         self.roomList.append(roomDict)
