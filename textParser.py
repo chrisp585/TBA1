@@ -1,5 +1,7 @@
 #include statements
 import sys
+import gameEngine
+import gameState
 
 
 #returns the alias for the verb entered by the player

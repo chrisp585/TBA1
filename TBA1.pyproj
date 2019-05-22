@@ -19,12 +19,24 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="armory.txt" />
+    <Content Include="cellBlockA.txt" />
+    <Content Include="cellHouseRoof.txt" />
+    <Content Include="kitchen.txt" />
+    <Content Include="library.txt" />
+    <Content Include="messHall.txt" />
     <Content Include="prisonCell.txt" />
+    <Content Include="sallyPort.txt" />
+    <Content Include="savedgame.txt" />
+    <Content Include="visitingRoom.txt" />
+    <Content Include="yard.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gameEngine.py" />
+    <Compile Include="gameObjects.py" />
     <Compile Include="gameState.py" />
     <Compile Include="mainMenu.py" />
+    <Compile Include="passages.py" />
     <Compile Include="roomParser.py" />
     <Compile Include="roomParserX.py">
       <SubType>Code</SubType>

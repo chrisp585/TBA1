@@ -1,0 +1,4 @@
+Library
+You've arrived at the Library! It seems to be a small gathering of old, dusty books that aren't well taken care of. Cell Block A is to the north and the Recreation Yard is to the South. You see book shelves, a desk, and a book cart.
+You're back at the Library. Passageways: North - Cell Block A, South - Recreation Yard. Features: Book Shelves, Desk, Book Cart.
+not visited
