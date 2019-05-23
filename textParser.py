@@ -108,7 +108,7 @@ def userInput(newGame):
             if words[i] == "the" or words[i] == "a":
                 del words[i]
     #analyze each word
-        specVerb = helpVerbs(words)
+        specVerb = helpVerbs(words, newGame)
         if specVerb != 0 and specVerb != 1: 
             if specVerb == "look":
                 specialNoun = "N/A"
