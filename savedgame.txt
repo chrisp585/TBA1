@@ -2,10 +2,72 @@ Prison Cell
 *
 visited
 not visited
+not visited
+not visited
+not visited
+not visited
+not visited
+not visited
+not visited
+not visited
+not visited
+not visited
+not visited
+not visited
+
 *
-Inventory
+Prison Cell
+Prison Cell
+Prison Cell
+Prison Cell
+Prison Cell
+Cell House Roof
+Cell House Roof
+Cell House Roof
+Cell Block A
+Cell Block A
+Mess Hall
+Kitchen
+Kitchen
+Library
+Library
+Library
+Library
+Sally Port
+Sally Port
+Armory
+Visiting Room
+Visiting Room
+Visiting Room
+Yard
+Yard
 *
 y
 y
+y
+y
+n
+n
+y
+y
+y
+y
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
 *
-key
