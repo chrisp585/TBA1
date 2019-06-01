@@ -15,8 +15,7 @@ class gameState:
         self.passageList = []
 
 
-    #hit', 'pull', 'eat', 'scratch', 'break', 'throw', 'push', 'drink',
-    #'lookat', 'help', 'inventory
+    #hit', 'pull', 'eat', 'scratch', 'break', 'push', 'drink',
     def modifyState(self, verb, noun):
         if (verb == 'take'):
             for item in self.objectList:
@@ -58,6 +57,12 @@ class gameState:
             print ("open, take, look, lookat, savegame, loadgame, help, inventory.")
         elif (verb == 'inventory'):
             self.displayInventory()
+        elif (verb == 'throw'):
+            for item in self.objectList:
+                if (item['Name'] == noun and item['Location'] == 'Inventory'):
+                    self.removeInventory(noun)
+                    print (item['Name'], " has been removed from your inventory.")
+                    return
         elif (verb == 'savegame'):
             self.saveGame()
             return
