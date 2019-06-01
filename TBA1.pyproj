@@ -20,15 +20,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="armory.txt" />
+    <Content Include="boat.txt" />
     <Content Include="cellBlockA.txt" />
     <Content Include="cellHouseRoof.txt" />
+    <Content Include="dock.txt" />
+    <Content Include="guardhouse.txt" />
     <Content Include="kitchen.txt" />
     <Content Include="library.txt" />
     <Content Include="messHall.txt" />
     <Content Include="prisonCell.txt" />
+    <Content Include="recreationYard.txt" />
     <Content Include="sallyPort.txt" />
     <Content Include="savedgame.txt" />
     <Content Include="visitingRoom.txt" />
+    <Content Include="wardenOffice.txt" />
     <Content Include="yard.txt" />
   </ItemGroup>
   <ItemGroup>

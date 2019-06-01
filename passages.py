@@ -50,7 +50,7 @@ def createPassages(newGame):
 
     VRtoYARD = {'Name': 'VRtoYARD', 'Description': 'Yard', 'Location': 'Visiting Room', 'Direction': 'South', 'Locked': 'n'}
     newGame.addPassage(VRtoYARD)
-	
+
     YARDtoVR = {'Name': 'YARDtoVR', 'Description': 'Visiting Room', 'Location': 'Yard', 'Direction': 'North', 'Locked': 'n'}
     newGame.addPassage(YARDtoVR)
 

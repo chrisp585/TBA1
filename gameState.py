@@ -15,23 +15,44 @@ class gameState:
         self.passageList = []
         #print ("GameState Instance Created")#for testing
 
+
+    #hit', 'pull', 'eat', 'scratch', 'break', 'throw', 'push', 'drink',
+    #'lookat', 'help', 'inventory
     def modifyState(self, verb, noun):
         if (verb == 'take'):
             for item in self.objectList:
                 if (item['Name'] == noun and item['Movable'] == 'y'):
+                    print (item['Name'], " has been added to your inventory.")
                     self.addInventory(noun)
                     return
+                else:
+                    print (item['Name'], " can't be added to your inventory.")
         elif (verb == 'open'):
             for item in self.passageList:
                 if (item['Name'] == noun):
                     self.currentRoom = item['Connection']
+                    print ("You open ", item['Name'], " and go into the next room.")
                     self.printRoomDescription()
                     return
+            for item in self.objectList:
+                if (item['Name'] == noun):
+                    print ("You open ", item['Name'], "and inspect.")
+                    print (item['Description', "\n"])
         elif (verb == 'drop'):
             for item in self.objectList:
                 if (item['Name'] == noun and item['Location'] == 'Inventory'):
                     self.removeInventory(noun)
+                    print (item['Name'], " has been removed from your inventory.")
                     return
+        elif (verb == 'look'):
+            for item in self.roomList:
+                if (item['Name'] == self.currentRoom):
+                    print ("Location: ", item['Name'])
+                    print (item['LongDesc'], '\n')
+        elif (verb == 'lookat'):
+            for item in self.objectList:
+                if (item['Name'] == noun):
+                    print (item[''])
         elif (verb == 'savegame'):
             self.saveGame()
             return
