@@ -13,7 +13,6 @@ class gameState:
         self.objectList = []
         self.roomStatus = []
         self.passageList = []
-        #print ("GameState Instance Created")#for testing
 
 
     #hit', 'pull', 'eat', 'scratch', 'break', 'throw', 'push', 'drink',
@@ -51,8 +50,14 @@ class gameState:
                     print (item['LongDesc'], '\n')
         elif (verb == 'lookat'):
             for item in self.objectList:
-                if (item['Name'] == noun):
-                    print (item[''])
+                if (item['Name'] == 'noun'):
+                    print (item['Name'], ": ")
+                    print (itme['Description'], "/n")
+        elif (verb == 'help'):
+            print ("Try these commands: hit, pull, eat, scratch, drop, break, throw, push, drink, ")
+            print ("open, take, look, lookat, savegame, loadgame, help, inventory.")
+        elif (verb == 'inventory'):
+            self.displayInventory()
         elif (verb == 'savegame'):
             self.saveGame()
             return
@@ -60,9 +65,8 @@ class gameState:
             self.loadSavedGame()
             self.printRoomDescription()
             return
-
-        #print ("State modified")
-
+    
+            
     def setRoomStatus(self, roomName):
         for item in self.roomList:
             if (item['Name'] == roomName):
