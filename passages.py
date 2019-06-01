@@ -6,7 +6,7 @@ import gameEngine
 def createPassages(newGame):
 
 
-    PCtoCBA = {'Name': 'PCtoCBA', 'Description': 'Cell Block A', 'Location': 'Prison Cell', 'Direction': 'South', 'Locked': 'y', 'KeytoOpen': 'key'}
+    PCtoCBA = {'Name': 'PCtoCBA', 'Description': 'Cell Block A', 'Location': 'Prison Cell', 'Direction': 'south', 'Locked': 'n', 'KeytoOpen': 'key'}
     newGame.addPassage(PCtoCBA)
 
     CBAtoPC = {'Name': 'CBAtoPC', 'Description': 'Prison Cell', 'Location': 'Cell Block A', 'Direction': 'North', 'Locked': 'y', 'KeytoOpen': 'key'}
