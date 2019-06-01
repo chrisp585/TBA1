@@ -70,8 +70,8 @@ class gameState:
             self.loadSavedGame()
             self.printRoomDescription()
             return
-    
-            
+        
+
     def setRoomStatus(self, roomName):
         for item in self.roomList:
             if (item['Name'] == roomName):

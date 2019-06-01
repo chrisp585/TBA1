@@ -71,10 +71,16 @@ def display():
     print("2) Load saved game")
     print("3) Exit\n")
 
-    while (menuSelection != 1 or 2 or 3):
-        menuSelection = input("> ")
-        print ('\n')
-        if (menuSelection != 1 or 2 or 3):
-            print ("Try again, enter a 1, 2, or 3")
+
+    menuSelection = input("> ")
+    print ('\n')
+
 
     return (menuSelection)
+
+    #menuSelection = 0
+
+    #while (menuSelection != "1" or menuSelection != '2' or menuSelection != '3'):
+
+        #if (menuSelection != "1" or menuSelection !='2' or menuSelection !='3'):
+            #print ("Try again, enter a 1, 2, or 3")
