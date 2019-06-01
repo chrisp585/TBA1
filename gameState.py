@@ -63,6 +63,13 @@ class gameState:
                     self.removeInventory(noun)
                     print (item['Name'], " has been removed from your inventory.")
                     return
+        elif (verb == 'go'):
+            for item in self.passageList:
+                if (item['Location'] == self.currentRoom and item['Direction'] == 'noun' and item['Locked'] == 'n'):
+                    print ("You are entering...\n")
+                    self.currentRoom = item['Connection']
+                    self.printRoomDescription()
+                    return
         elif (verb == 'savegame'):
             self.saveGame()
             return
@@ -207,15 +214,15 @@ class gameState:
         print (self.playerInventory, '\n')
 
     def testSuite(self):
-        print ("**********This is a testing function that was called**********")
-        print ("List of all rooms loaded: \n")
-        print (self.roomList)
-        print ("List of all passages loaded: \n")
-        print (self.passageList)
+        #print ("**********This is a testing function that was called**********")
+        #print ("List of all rooms loaded: \n")
+        #print (self.roomList)
+        #print ("List of all passages loaded: \n")
+        #print (self.passageList)
         print ("List of all objects loaded: \n")
         print (self.objectList)
-        print ("Current room: \n")
-        print (self.currentRoom)
+        #print ("Current room: \n")
+        #print (self.currentRoom)
         print ("********************End of Test Function***********************")
 
 

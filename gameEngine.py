@@ -32,7 +32,7 @@ def main():
     newGame.printRoomDescription()
 
     #Call for testing
-    newGame.testSuite()
+    #newGame.testSuite()
 
     while (newGame.gameOver() == 0):
         verb, noun = textParser.parse(newGame)
