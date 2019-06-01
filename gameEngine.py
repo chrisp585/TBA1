@@ -26,6 +26,7 @@ def main():
     else:
         print ("Goodbye")
 
+
     #gameplay loop would start here
     newGame.printRoomDescription()
 
