@@ -25,6 +25,7 @@ def main():
         newGame.loadSavedGame()
     else:
         print ("Goodbye")
+        return 0;
 
 
     #gameplay loop would start here
