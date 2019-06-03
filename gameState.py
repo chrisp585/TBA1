@@ -173,7 +173,7 @@ class gameState:
             return
         elif (verb == 'throw'):
             for item in self.objectList:
-                if (item['Name'] == noun and item['Location'] == 'Inventory'):
+                if (item['Name'] == noun and item['Location'] == 'inventory'):
                     self.removeInventory(noun)
                     print (item['Name'], " has been removed from your inventory.")
                     return
